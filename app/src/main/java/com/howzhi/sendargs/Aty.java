@@ -14,6 +14,7 @@ import com.howzhi.sendargs.domain.User;
 public class Aty extends AppCompatActivity {
 
     private TextView tview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,9 +22,9 @@ public class Aty extends AppCompatActivity {
         Intent it = getIntent();
         TextView tv = (TextView) findViewById(R.id.tv);
 
-      // Bundle data = it.getExtras(); //不指定key
+        // Bundle data = it.getExtras(); //不指定key
         Bundle data = it.getBundleExtra("data"); //指定key
-        tv.setText(String.format("name=%s,age=%d",data.getString("name"),data.getInt("age")));
+        tv.setText(String.format("name=%s,age=%d", data.getString("name"), data.getInt("age")));
 
     }
 
