@@ -11,35 +11,25 @@ import android.widget.TextView;
 import com.howzhi.sendargs.domain.User;
 
 public class MainActivity extends AppCompatActivity {
-    private TextView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        view = (TextView) findViewById(R.id.textView);
         findViewById(R.id.btnStartAty).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this, Aty.class);
-//                Bundle bl = new Bundle();
-//                bl.putString("name", "ivy");
-//                bl.putInt("age", 19);
-               // i.putExtras(bl);
-            //    i.putExtra("data", bl);
-                // i.putExtra("data", "howzhi!");
-              i.putExtra("user", new User("好知网",2));
-               // startActivity(i);
-                startActivityForResult(i, 0);
+            Intent it = new Intent(MainActivity.this, Aty.class);
+            Bundle bdl = new Bundle();
+                bdl.putString("name", "好知网");
+                bdl.putInt("age", 2);
+                //it.putExtras(bdl);//匿名传送
+                it.putExtra("data",bdl);
+                startActivity(it);
             }
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        view.setText(data.getStringExtra("data"));
-    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -14,33 +14,16 @@ import com.howzhi.sendargs.domain.User;
 public class Aty extends AppCompatActivity {
 
     private TextView tview;
-    private EditText edit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aty);
-        edit = (EditText) findViewById(R.id.editText);
         Intent it = getIntent();
         TextView tv = (TextView) findViewById(R.id.tv);
-       // tv.setText(it.getStringExtra("data")); //普通对象
-        //Bundle data = it.getExtras(); //不指定key
-       // Bundle data = it.getBundleExtra("data"); //指定key
-       // tv.setText(String.format("name=%s,age=%d, addr=%s", data.getString("name"), data.getInt("age"),data.getString("addr", "zhejiang-hangzhou")));
 
-
-       // User user = (User) it.getSerializableExtra("user");
-            User user = it.getParcelableExtra("user");
-        tv.setText(String.format("name=%s,age=%d", user.getUserName(), user.getAge()));
-
-
-        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent();
-                setResult(1, i.putExtra("data",edit.getText().toString()));
-                finish(); //结束当前atciviy
-            }
-        });
+      // Bundle data = it.getExtras(); //不指定key
+        Bundle data = it.getBundleExtra("data"); //指定key
+        tv.setText(String.format("name=%s,age=%d",data.getString("name"),data.getInt("age")));
 
     }
 

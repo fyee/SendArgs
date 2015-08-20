@@ -13,14 +13,4 @@
         android:layout_height="wrap_content"
         android:text="@string/tv"
         android:id="@+id/tv"/>
-    <tv
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/editText"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="send back"
-        android:id="@+id/button"
-        android:layout_gravity="center_vertical" />
 </LinearLayout>
